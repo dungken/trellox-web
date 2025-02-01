@@ -2,7 +2,6 @@ import { pink } from '@mui/material/colors'
 import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack'
 import HomeIcon from '@mui/icons-material/Home'
-import './App.css'
 
 function App() {
   return (
