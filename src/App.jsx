@@ -2,10 +2,15 @@ import { pink } from '@mui/material/colors'
 import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack'
 import HomeIcon from '@mui/icons-material/Home'
+import Typography from '@mui/material/Typography'
+
 
 function App() {
   return (
     <>
+      <Typography variant="h1" gutterBottom color="text.secondary">
+        h1. Heading
+      </Typography>
       <div>dungken</div>
       <Stack spacing={2} direction="row">
         <Button variant="text">Text</Button>
