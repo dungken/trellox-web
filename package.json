@@ -1,10 +1,10 @@
 {
-  "name": "vite-trello-web-base-project",
+  "name": "trellox-web",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "author": "TrungQuanDev - Một Lập Trình Viên",
-  "description": "https://youtube.com/@trungquandev",
+  "author": "DungKen - Một Lập Trình Viên",
+  "description": "https://youtube.com/@dungken2112",
   "engines": {
     "node": ">=18.x"
   },
