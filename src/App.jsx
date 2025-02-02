@@ -3,11 +3,70 @@ import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack'
 import HomeIcon from '@mui/icons-material/Home'
 import Typography from '@mui/material/Typography'
+import { useColorScheme } from '@mui/material/styles'
+import { Box, FormControl, InputLabel, MenuItem, Select } from '@mui/material'
+import LightModeIcon from '@mui/icons-material/LightMode'
+import SettingsBrightnessIcon from '@mui/icons-material/SettingsBrightness'
+import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined'
 
+
+function ModeSelect() {
+  const { mode, setMode } = useColorScheme()
+  const handleChange = (event) => {
+    const selectedMode = event.target.value
+    setMode(selectedMode)
+  }
+
+  return (
+    <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+      <InputLabel id="label-select-dark-light-mode">Mode</InputLabel>
+      <Select
+        labelId="label-select-dark-light-mode"
+        id="select-dark-light-mode"
+        value={mode}
+        label="Mode"
+        onChange={handleChange}
+      >
+        <MenuItem value="light">
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <LightModeIcon fontSize='small' /> Light
+          </div>
+        </MenuItem>
+        <MenuItem value="dark">
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+            <DarkModeOutlinedIcon fontSize='small' /> Dark
+          </Box>
+        </MenuItem>
+        <MenuItem value="system">
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+            <SettingsBrightnessIcon fontSize='small' /> System
+          </Box>
+        </MenuItem>
+      </Select>
+    </FormControl >
+  )
+}
+
+function ModeToggle() {
+  const { mode, setMode } = useColorScheme()
+  return (
+    <Button
+      onClick={() => {
+        setMode(mode === 'light' ? 'dark' : 'light')
+      }}
+    >
+      {mode === 'light' ? 'Turn dark' : 'Turn light'}
+    </Button>
+  )
+}
 
 function App() {
   return (
     <>
+      <ModeSelect />
+      <hr />
+      <ModeToggle />
+      <hr />
       <Typography variant="h1" gutterBottom color="text.secondary">
         h1. Heading
       </Typography>
