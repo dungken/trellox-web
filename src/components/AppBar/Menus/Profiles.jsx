@@ -32,7 +32,7 @@ export default function Profiles() {
           aria-expanded={open ? 'true' : undefined}
         >
           <Avatar
-            sx={{ width: 32, height: 32 }}
+            sx={{ width: 34, height: 34 }}
             alt='DungKen'
             src='https://avatars.githubusercontent.com/u/126952464?s=96&v=4'
           />
