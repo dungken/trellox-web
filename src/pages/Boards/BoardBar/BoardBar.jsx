@@ -36,7 +36,6 @@ function index() {
       justifyContent: 'space-between',
       gap: 2,
       overflow: 'auto',
-      borderBottom: '1px solid #1976d2',
       paddingX: 2,
       bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#34495e' : '#1976d2')
     }}>
@@ -99,7 +98,10 @@ function index() {
               width: 34,
               height: 34,
               fontSize: '16px',
-              border: 'none'
+              border: 'none',
+              color: 'white',
+              cursor: 'pointer',
+              '&:first-of-type': { bgcolor: '#a4b0be' }
             }
           }}
           max={7}
