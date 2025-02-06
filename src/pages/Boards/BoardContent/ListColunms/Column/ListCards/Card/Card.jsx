@@ -19,9 +19,7 @@ function Card({ card }) {
       boxShadow: '0 1px 1px rgba(0, 0, 0, 0.2)',
       overflow: 'unset'
     }}>
-      {card?.cover &&
-        <CardMedia sx={{ height: 140 }} image={card?.cover} />
-      }
+      {card?.cover && <CardMedia sx={{ height: 140 }} image={card?.cover} />}
 
       <CardContent sx={{ p: 1.5, '&:last-child': { pb: 1.5 } }}>
         <Typography>{card?.title}</Typography>
