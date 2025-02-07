@@ -32,7 +32,6 @@ function Card({ card }) {
           {!!card?.attachments?.length && <Button size="small" startIcon={<AttachmentIcon />}>{card?.attachments?.length}</Button>}
         </CardActions>
       }
-
     </MuiCard>
   )
 }
