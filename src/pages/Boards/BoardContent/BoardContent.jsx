@@ -12,9 +12,9 @@ import {
   DragOverlay,
   defaultDropAnimationSideEffects,
   closestCorners,
-  closestCenter,
+  // closestCenter,
   pointerWithin,
-  rectIntersection,
+  // rectIntersection,
   getFirstCollision
 } from '@dnd-kit/core'
 import { arrayMove } from '@dnd-kit/sortable'
@@ -214,16 +214,18 @@ function BoardContent({ board }) {
     // Find intersection points, collisions - intersection with cursor
     const pointerIntersection = pointerWithin(args)
 
+    if (!pointerIntersection?.length) return
+
     // The collision detection algorithm will return an array of collision points.
-    const intersections = !!pointerIntersection?.length ? pointerIntersection : rectIntersection(args)
+    // const intersections = !!pointerIntersection?.length ? pointerIntersection : rectIntersection(args)
 
     // Find the first overId in the list of intersections
-    let overId = getFirstCollision(intersections, 'id')
+    let overId = getFirstCollision(pointerIntersection, 'id')
     if (overId) {
       const checkColumn = orderedColumns.find(column => column._id === overId)
       if (checkColumn) {
         // console.log('overId before: ', overId)
-        overId = closestCenter({
+        overId = closestCorners({
           ...args,
           droppableContainers: args.droppableContainers.filter(container => {
             return (container.id != overId) && (checkColumn?.cardOrderIds?.includes(container.id))
